@@ -1,0 +1,38 @@
+{
+  "name": "objection-softdelete",
+  "version": "1.0.0",
+  "description": "Plugin for Objection.js to add softdelete functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ackerdev/objection-softdelete"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "author": "Nick Acker",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "knex": "^0.12.6",
+    "mysql": "^2.13.0",
+    "nyc": "^10.1.2",
+    "objection": "^0.7.0"
+  },
+  "peerDependencies": {
+    "objection": "*"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "index.js"
+    ],
+    "reporter": [
+      "text-summary",
+      "lcov"
+    ]
+  }
+}
