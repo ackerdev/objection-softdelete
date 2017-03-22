@@ -2,8 +2,7 @@ module.exports = {
   client: 'mysql',
   connection: {
     host: 'localhost',
-    user: 'admin',
-    password: 'dogfood',
+    user: 'root',
     database: 'objection-softdelete-test'
   }
 };
