@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 # [Unreleased][]
+
+## 1.0.1 - 2017-03-24
 ### Fixed
 - Ambiguous column error during joins
 
@@ -17,4 +19,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Allow override to include deleted records in query results
 - Allow override to force delete of soft-delete models
 
-[Unreleased]: https://github.com/ackerdev/objection-timestamp/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/ackerdev/objection-timestamp/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/ackerdev/objection-timestamp/compare/v1.0.0...v1.0.1
