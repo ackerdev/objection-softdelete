@@ -13,7 +13,7 @@ module.exports = {
 
         if (modelClass.softDelete) {
           this.onBuild(q => {
-            if (q.isFindQuery() && !q.context().includeDeleted) {
+            if (q.isFind() && !q.context().includeDeleted) {
               q.whereNull(`${modelClass.tableName}.${deleteAttr}`);
             }
           });
