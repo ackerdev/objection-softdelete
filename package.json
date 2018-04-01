@@ -20,10 +20,10 @@
     "knex": "^0.12.6",
     "mysql": "^2.13.0",
     "nyc": "^10.1.2",
-    "objection": "^0.7.0"
+    "objection": ">=1"
   },
   "peerDependencies": {
-    "objection": "*"
+    "objection": ">=1"
   },
   "nyc": {
     "all": true,
