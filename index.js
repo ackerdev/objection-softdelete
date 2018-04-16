@@ -14,7 +14,7 @@ module.exports = {
         if (modelClass.softDelete) {
           this.onBuild(q => {
             if (q.isFind() && !q.context().includeDeleted) {
-              q.whereNull(`${modelClass.tableName}.${deleteAttr}`);
+              q.whereNull(`${q.tableRefFor(modelClass)}.${deleteAttr}`);
             }
           });
         }
