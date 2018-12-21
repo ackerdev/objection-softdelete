@@ -22,9 +22,6 @@
     "nyc": "^10.1.2",
     "objection": ">=1"
   },
-  "peerDependencies": {
-    "objection": ">=1"
-  },
   "nyc": {
     "all": true,
     "include": [
