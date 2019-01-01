@@ -1,6 +1,6 @@
 {
   "name": "objection-softdelete",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Plugin for Objection.js to add softdelete functionality",
   "main": "index.js",
   "scripts": {
