@@ -1,7 +1,7 @@
 'use strict';
 
-import test from 'ava';
-import { SoftDeleteModel, RelationModel } from './helpers/models';
+const test = require('ava');
+const { SoftDeleteModel, RelationModel } = require('./helpers/models');
 
 test.beforeEach(async t => {
   const target = await SoftDeleteModel.query().insert({ deletedAt: new Date() });
@@ -11,8 +11,8 @@ test.beforeEach(async t => {
 
 test.afterEach.always(async t => {
   const { target, related } = t.context;
-  target.$query().forceDelete();
-  related.$query().delete();
+  await target.$query().forceDelete();
+  await related.$query().delete();
 });
 
 test('static query', async t => {
@@ -45,4 +45,4 @@ test('count', async t => {
   const { target } = t.context;
   const count = await SoftDeleteModel.query().where({ id: target.id }).includeDeleted().resultSize();
   t.is(count, 1);
- });
+});
