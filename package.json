@@ -16,10 +16,10 @@
   "author": "Nick Acker",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.18.2",
-    "knex": "^0.12.6",
-    "mysql": "^2.13.0",
-    "nyc": "^10.1.2",
+    "ava": "^3.15.0",
+    "knex": ">=0.19.5",
+    "mysql": ">=2.13.0",
+    "nyc": "^15.1.0",
     "objection": ">=1"
   },
   "nyc": {
