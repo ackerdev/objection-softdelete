@@ -21,6 +21,7 @@ knex.schema.raw(`DROP DATABASE IF EXISTS \`${schema}\``)
   .then(() => knex.schema.withSchema(schema).createTable('relation', table => {
     table.increments();
     table.integer('fk');
+    table.dateTime('deletedAt');
   }))
   .then(() => knex.schema.withSchema(schema).dropTableIfExists('many_to_many_relation'))
   .then(() => knex.schema.withSchema(schema).createTable('many_to_many_relation', table => {

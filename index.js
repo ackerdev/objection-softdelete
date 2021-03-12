@@ -26,7 +26,7 @@ module.exports = {
 
       delete(...args) {
         if (this.modelClass().softDelete) {
-          return super.patch({ [deleteAttr]: new Date() });
+          return super.whereNull(deleteAttr).patch({ [deleteAttr]: new Date() });
         }
 
         return super.delete(...args);
