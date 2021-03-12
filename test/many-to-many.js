@@ -19,7 +19,7 @@ test.afterEach.always(async t => {
 test('uses unambiguous column reference', async t => {
   const { target, related } = t.context;
   const result = await ManyToManyRelationModel.query()
-    .where({ id: related.id })
-    .eager('softDeleteModel');
+    .withGraphJoined('softDeleteModel')
+    .where('many_to_many_relation.id', related.id);
   t.is(result.softDeleteModel, undefined);
 });

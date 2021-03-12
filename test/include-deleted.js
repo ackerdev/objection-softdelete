@@ -27,16 +27,23 @@ test('related query', async t => {
   t.not(model, undefined);
 });
 
-test('eager', async t => {
+test('withGraphFetched', async t => {
   const { target, related } = t.context;
-  const relatedModel = await RelationModel.query().eager('softDeleteModel').includeDeleted().findById(related.id);
+  const relatedModel = await RelationModel.query().withGraphFetched('softDeleteModel').includeDeleted().findById(related.id);
   const model = relatedModel.softDeleteModel;
   t.not(model, null);
 });
 
-test('loadRelated', async t => {
+test('withGraphJoined', async t => {
   const { target, related } = t.context;
-  const relatedModel = await related.$loadRelated('softDeleteModel').includeDeleted();
+  const relatedModel = await RelationModel.query().withGraphJoined('softDeleteModel').includeDeleted().findById(related.id);
+  const model = relatedModel.softDeleteModel;
+  t.not(model, null);
+});
+
+test('fetchGraph', async t => {
+  const { target, related } = t.context;
+  const relatedModel = await related.$fetchGraph('softDeleteModel').includeDeleted();
   const model = relatedModel.softDeleteModel;
   t.not(model, null);
 });
